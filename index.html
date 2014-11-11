@@ -113,11 +113,11 @@
 
   class HelloController {
 
-  //Action related to route
-  public function worldAction() {
-    //We just need to return the data to be render at view (html, json or xml)
-    return [ "title" =&gt; "Hello World!" ] ;
-  }
+    //Action related to route
+    public function worldAction() {
+      //We just need to return the data to be render at view (html, json or xml)
+      return [ "title" =&gt; "Hello World!" ] ;
+    }
 
 }
 ?&gt;
@@ -138,12 +138,11 @@
 
           <p>views are files like follow:</p>
 
-          <p>view file path: <code>app/views/hello/world</code></p>
+          <p>view file path: <code>app/views/hello/world.tpl.php</code></p>
 
           <p>
 <pre class="prettyprint">
   &lt;p&gt;Esto es &lt;?= $title ?&gt;&lt;/p&gt;
-
 </pre>
           </p>
 
