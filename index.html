@@ -36,7 +36,8 @@
           </h1>
           <p>
             Is a compilation about snippets that I found over internet and put them together
-            to work as a micro framework for PHP.
+            to work as a micro framework for PHP. At the moment its main work is for resolve routes and provide render view.
+            Data access to DB or rest Services must be implemented.
           </p>
 
           <h1>
@@ -58,63 +59,97 @@
             </a>Routes
           </h2>
 
-          <p>This modules is from a github repo (<a href="https://github.com/infostreams/php-rails-routing">php-rails-routing</a>). I made some modifications. In order to resolve controller Class, action (instance method) and view.</p>
+          <p>
+            This modules is from a github repo (<a href="https://github.com/infostreams/php-rails-routing">php-rails-routing</a>). I made some modifications. In order to resolve controller Class, action (instance method) and view.
+          </p>
 
-<h3>
-<a id="defining-routes" class="anchor" href="#defining-routes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining routes</h3>
+          <h3>
+            <a id="defining-routes" class="anchor" href="#defining-routes" aria-hidden="true">
+              <span class="octicon octicon-link"></span>
+            </a>Defining routes
+          </h3>
 
-<p>Go to folder <code>config</code> and open <code>routes.php</code> </p>
+          <p>Go to folder <code>config</code> and open <code>routes.php</code> </p>
 
-<p>and add your routes as follow:</p>
+          <p>and add your routes as follow:</p>
 
-<p>
-<pre class="prettyprint">
-&lt;?php
+          <p>
+            <pre class="prettyprint">
+            &lt;?php
 
-  // mapping for http://&lt;location&gt;/hello/
-  $r-&gt;map("/hello", "hello::world");
-  
-?&gt
-</pre></p>
+              // mapping for http://&lt;location&gt;/hello/
+              $r-&gt;map("/hello", "hello::world");
+              
+            ?&gt;
+            </pre>
+          </p>
 
-<p>where:</p>
+          <p>where:</p>
 
-<ul>
-<li><code>"/hello"</code> is a route on your site</li>
-<li><code>"hello::world"</code> is a mixed term controller::action</li>
-</ul>
+          <ul>
+            <li><code>"/hello"</code> is a route on your site</li>
+            <li><code>"hello::world"</code> is a mixed term controllerName::actionName</li>
+          </ul>
 
-<p>so router will runs </p>
+          <p>so router will runs </p>
 
-<p><code>// -&gt;  HelloController-&gt;worldAction()</code></p>
+          <p><code>// -&gt;  HelloController-&gt;worldAction()</code></p>
 
-<h3>
-<a id="defining-controllers" class="anchor" href="#defining-controllers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Defining controllers</h3>
+          <h3>
+            <a id="defining-controllers" class="anchor" href="#defining-controllers" aria-hidden="true">
+              <span class="octicon octicon-link"></span>
+            </a>Defining controllers
+          </h3>
 
-<p>In the <code>app/controllers</code> folder you put the controllers to handle your routes</p>
+          <p>In the <code>app/controllers</code> folder you put the controllers to handle your routes</p>
 
-<p>the convention name is <code>&lt;ControllerName&gtController.php</code></p>
+          <p>the convention name is <code>&lt;ControllerName&gt;Controller.php</code></p>
 
-<p>controllers are clases like follow:</p>
+          <p>controllers are clases like follow:</p>
 
-<p>
-<pre class="prettyprint">
-&lt;?php
+          <p>
+            <pre class="prettyprint">
+            &lt;?php
 
-  class HelloController {
+              class HelloController {
 
-  //Action related to route
-  public function worldAction() {
-    //We just need to return the data to be render at view (html, json or xml)
-    return [ "title" =&gt; "Hello World!" ] ;
-  }
+              //Action related to route
+              public function worldAction() {
+                //We just need to return the data to be render at view (html, json or xml)
+                return [ "title" =&gt; "Hello World!" ] ;
+              }
 
-}
-?&gt
-</pre></p>
+            }
+            ?&gt;
+            </pre>
+          </p>
+          
+          <h3>
+            <a id="defining-views" class="anchor" href="#defining-views" aria-hidden="true">
+              <span class="octicon octicon-link"></span>
+            </a>Defining Views
+          </h3>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+          <p>In the <code>app/views</code> folder you put the views (html) to handle render of your routes</p>
+
+          <p>Yu will need to create a folder by each controller you have defined on <code>app/controllers</code> folder.</p>
+
+          <p>the convention name is <code>/&lt;controllername&gt;/&lt;actionname&gt;.tpl.php</code></p>
+
+          <p>controllers are clases like follow:</p>
+
+          <p>
+            <pre class="prettyprint">
+              &lt;p&gt;Esto es &lt;?= $title ?&gt;&lt;/p&gt;
+
+            </pre>
+          </p>
+
+          <h3>
+            <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true">
+              <span class="octicon octicon-link"></span>
+            </a>Authors and Contributors
+          </h3>
 
 <p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
