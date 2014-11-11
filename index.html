@@ -52,8 +52,11 @@
 
 <p>and add your routes as follow:</p>
 
-<p><code>// mapping for http://&lt;location&gt;/hello/</code>
-<code>$r-&gt;map("/hello", "hello::world");</code></p>
+<p>
+<code>
+// mapping for http://&lt;location&gt;/hello/
+$r-&gt;map("/hello", "hello::world");
+</code></p>
 
 <p>where:</p>
 
@@ -75,16 +78,20 @@
 
 <p>controllers are clases like follow:</p>
 
-<p><code>&lt;?php</code>
-<code>class HelloController {</code></p>
+<p>
+<code>
+&lt;?php
+class HelloController {
 
-<p><code>//Action related to route</code>
-  <code>public function worldAction() {</code>
-     <code>return [ "title" =&gt; "Hello World!" ] ;</code>
-  <code>}</code></p>
+//Action related to route
+  public function worldAction() {
+    return [ "title" =&gt; "Hello World!" ] ;
+  }
 
-<p><code>}</code>
-<code>?&gt;</code>
+}
+?&gt
+  
+</code>
 If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
 <h3>
