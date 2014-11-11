@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=xml&skin=desert"></script>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -53,16 +53,20 @@
 <p>and add your routes as follow:</p>
 
 <p>
-<code>
-// mapping for http://&lt;location&gt;/hello/
-$r-&gt;map("/hello", "hello::world");
-</code></p>
+<pre class="prettyprint">
+&lt;?php
+
+  // mapping for http://&lt;location&gt;/hello/
+  $r-&gt;map("/hello", "hello::world");
+  
+?&gt
+</pre></p>
 
 <p>where:</p>
 
 <ul>
-<li>"/hello" is a route on your site</li>
-<li>"hello::world" is a mixed term controller::action</li>
+<li><p><code>"/hello"</code></p> is a route on your site</li>
+<li><p><code>"hello::world"</code></p> is a mixed term controller::action</li>
 </ul>
 
 <p>so router will runs </p>
@@ -79,18 +83,18 @@ $r-&gt;map("/hello", "hello::world");
 <p>controllers are clases like follow:</p>
 
 <p>
-<pre>
+<pre class="prettyprint">
 &lt;?php
-class HelloController {
 
-//Action related to route
+  class HelloController {
+
+  //Action related to route
   public function worldAction() {
     return [ "title" =&gt; "Hello World!" ] ;
   }
 
 }
 ?&gt
-  
 </pre></p>
 If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
