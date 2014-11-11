@@ -77,8 +77,8 @@
             <pre class="prettyprint">
             &lt;?php
 
-              // mapping for http://&lt;location&gt;/hello/
-              $r-&gt;map("/hello", "hello::world");
+              // mapping for http://&lt;location&gt;/hello
+              $r-&gt;map("hello", "hello::world");
               
             ?&gt;
             </pre>
@@ -87,7 +87,7 @@
           <p>where:</p>
 
           <ul>
-            <li><code>"/hello"</code> is a route on your site</li>
+            <li><code>"hello"</code> is a route on your site</li>
             <li><code>"hello::world"</code> is a mixed term controllerName::actionName</li>
           </ul>
 
@@ -142,7 +142,7 @@
 
           <p>
 <pre class="prettyprint">
-  &lt;p&gt;Esto es &lt;?= $title ?&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;?= $title ?&gt;&lt;/p&gt;
 </pre>
           </p>
 
